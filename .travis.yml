@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t joliest/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true joliest/docker-test npm run test # -e CI=true for the npm run test to close and omit test coverage
