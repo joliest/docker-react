@@ -7,3 +7,4 @@ before_install:
 
 script:
   - docker run -e CI=true joliest/docker-test npm run test # -e CI=true for the npm run test to close and omit test coverage
+
